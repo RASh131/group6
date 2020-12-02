@@ -27,5 +27,8 @@ public class Main {
             System.out.println("make and saved file");
             Files.write(out,arrayList,Charset.defaultCharset());
         }
+        
+        Frame frame = new Frame("MyTitle");
+        frame.setVisible(true);
     }
 }
