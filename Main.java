@@ -28,7 +28,9 @@ public class Main {
             Files.write(out,arrayList,Charset.defaultCharset());
         }
         
-        Frame frame = new Frame("MyTitle");
+        Frame frame = new Frame("sample");
+        frame.makememos();//ボタンをした時に発動するようにしたい
         frame.setVisible(true);
+        
     }
 }

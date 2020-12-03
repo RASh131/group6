@@ -9,20 +9,15 @@ class Frame extends JFrame{
     setTitle(title);
     setBounds(100, 100, 600, 400);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+  }
+  public void makememos(){
     JTextField text1 = new JTextField();
-    JTextField text2 = new JTextField(10);
-    JTextField text3 = new JTextField();
-    text3.setColumns(20);
+    text1.setColumns(30);
 
     JPanel p = new JPanel();
     p.add(text1);
-    p.add(text2);
-    p.add(text3);
     
-    text1.setText("優先度?");
-    text2.setText("メモタイトル?");
-    text3.setText("メモ内容?");
+    text1.setText("ここにメモを書いていくぜ/!/!");
 
     Container contentPane = getContentPane();
     contentPane.add(p, BorderLayout.CENTER);
