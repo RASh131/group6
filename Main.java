@@ -29,8 +29,5 @@ public class Main {
         }
         
         Frame frame = new Frame("sample");
-        frame.makememos();//ボタンをした時に発動するようにしたい
-        frame.setVisible(true);
-        
     }
 }
