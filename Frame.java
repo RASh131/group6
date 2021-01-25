@@ -4,36 +4,23 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
-
 class Frame extends JFrame implements ActionListener{
   ArrayList<JTextField> memos = new ArrayList<JTextField>();
-  JTextField txt;
+  ArrayList<JTextField> days = new ArrayList<JTextField>();
+  ArrayList<JButton> deletes = new ArrayList<JButton>();
+  JTextField memo,day;
   JPanel p,p2;
+  JButton btn;
   Frame(String title){
-    this.txt = new JTextField("ここに書いて");
-    txt.setColumns(30);
-    JButton btn = new JButton("追加");
-    btn.addActionListener(this);
-
-    /**
-    this.memo1 = new JTextField("task1");
-    memo1.setColumns(30);
-    this.memo2 = new JTextField("task2");
-    memo2.setColumns(30);
-    this.memo3 = new JTextField("task3");
-    memo3.setColumns(30);
-     */
+    this.memo = new JTextField("ここに書いて");memo.setColumns(30);
+    this.day = new JTextField("日付");day.setColumns(5);
+    this.btn = new JButton("追加");btn.addActionListener(this);
 
     this.p = new JPanel();
     this.p2 = new JPanel();
-    p.add(txt);
+    p.add(memo);
+    p.add(day);
     p.add(btn);
-
-    /**
-    p2.add(memo1);
-    p2.add(memo2);
-    p2.add(memo3);
-     */
 
     Container contentPane = getContentPane();
     contentPane.add(p, BorderLayout.NORTH);
@@ -45,9 +32,17 @@ class Frame extends JFrame implements ActionListener{
     this.setVisible(true);
   }
   public void actionPerformed(ActionEvent e) {
-    this.memos.add(new JTextField(this.txt.getText()));
+    this.memos.add(new JTextField(this.memo.getText()));
+    this.days.add(new JTextField(this.day.getText()));
+    this.deletes.add(new JButton("削除"));
+
     memos.get(memos.size()-1).setColumns(30);
+    days.get(days.size()-1).setColumns(5);
+
     this.p2.add(this.memos.get(memos.size()-1));
+    this.p2.add(this.days.get(days.size()-1));
+    this.p2.add(this.deletes.get(deletes.size()-1));
+
     Container contentPane = getContentPane();
     contentPane.add(this.p2, BorderLayout.CENTER);
     this.setVisible(true);
