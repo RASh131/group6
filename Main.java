@@ -10,24 +10,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Path out = Paths.get("./save/save.txt");
-        List<String> arrayList = new ArrayList<>(Arrays.asList("not test","sample","code"));
         fileCheck fc = new fileCheck();
+        ArrayList<String> tmp = new ArrayList<String>();
         //directoryがあればそのまま
         if(fc.dirCheck()){ System.out.println("already exist"); }
         //directoryがなければ作る
         else{ System.out.println("make directory"); }
-        //fileがあればfileに上書き
-        if(fc.fileCheck()){
-            System.out.println("saved file");
-            Files.write(out,arrayList,Charset.defaultCharset());
-        }
-        //fileがなければ作った上で上書き
-        else{
-            System.out.println("make and saved file");
-            Files.write(out,arrayList,Charset.defaultCharset());
-        }
-        
-        Frame frame = new Frame("sample");
+        //fileがあれば読み出し
+        if(fc.fileCheck()){ tmp=fc.fileRead(); }
+        //Frame frame = new Frame("sample");
+        //frame.readFile(tmp);
+        Test test = new Test("sample");
+        test.readFile(tmp);
     }
 }
