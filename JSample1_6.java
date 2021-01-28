@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 
 //delete用のコード
 public class JSample1_6 extends JFrame implements  ActionListener{
@@ -26,6 +27,9 @@ public class JSample1_6 extends JFrame implements  ActionListener{
 
     public void actionPerformed(ActionEvent e){
         JLabel label = new JLabel("削除しました");
+        //実際にファイルを消す
+        File deleteFile = new File("./save/save.txt");
+        deleteFile.delete();
         JOptionPane.showMessageDialog(this, label);
     }
 
