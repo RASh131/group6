@@ -31,6 +31,9 @@ class Frame extends JFrame implements ActionListener{
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setVisible(true);
   }
+  public void rara() {
+    System.out.println("!!");
+  }
   public void actionPerformed(ActionEvent e) {
     this.memos.add(new JTextField(this.memo.getText()));
     this.days.add(new JTextField(this.day.getText()));

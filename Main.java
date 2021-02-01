@@ -17,7 +17,7 @@ public class Main {
         //directoryがなければ作る
         else{ System.out.println("make directory"); }
         //fileがあれば読み出し
-        if(fc.fileCheck()){ tmp=fc.fileRead(); }
+        if(fc.fileCheck()){tmp=fc.fileRead();}
         //Frame frame = new Frame("sample");
         //frame.readFile(tmp);
         Test test = new Test("sample");
